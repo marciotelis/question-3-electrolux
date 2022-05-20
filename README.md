@@ -6,7 +6,12 @@
 
 ## Comments
 
-> The question asks for a function to receive an array and return several calculations with it, including returning a copy of itself. On the main branch I did as requested. When calling the function, the user passes the addresses that will save the calculations and also the address that will save the copy of the array and its size. The function returns directly to these passed addresses.
+> The question asks for a function to receive an array and return several calculations with it, including returning a copy of itself. On the main branch I did as requested. When calling the function, the user passes the addresses that will save the calculations and also the address that will save the copy of the array and its size. The function returns directly to these passed addresses.  
+>
+> This application has the complexity of using the return of an array in a function, which is not naturally supported in C. To solve this problem, I used dynamic memory allocation, which is not advisable (nor allowed according to MISRA-C ) in embedded systems. If your system has a limited amount of RAM you don't want to use dynamic memory because of the risk you will ask for more memory than is available.  
+> 
+> Another important note is regarding the implementation of the function. The ideal to keep a clean and reusable code would be not to concentrate so much functionality in a single function, a function must have one unique purpose. Also, the number of arguments passed is a problem, in this sense. The best approach would be to create a function for each functionality (they can be in the same file). This would make each function smaller, with fewer arguments and with a single functionality.
+
 
 ## Features
 
