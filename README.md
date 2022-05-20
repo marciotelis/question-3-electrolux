@@ -20,18 +20,38 @@
 
 ~~~c
 
+#include <stdio.h>
+#include <stdlib.h>
+#include "array_handler.h"
+
 int main(void)
 {
 
+    /*  Input array */
     int array_test[] = {10, 20, 30, 80};
+    /*  defines variables that returns will be allocated */
     int array_average = 0;
     int array_maximum = 0;
     int array_minimum = 0;
-    int *array_copy = malloc(10 * sizeof(int));
     int array_copy_size = 0;
+    /*  Defines where the copy of the array will be saved, allocating an initial memory size    */
+    int *array_copy = malloc(10 * sizeof(int));
+    
+    /*  Call the function:
+        void array_statistics(int input_array[], int input_array_size, int *average, int *maximum, int *minimum, int array_return[], int *array_copy_size_return);
 
+        the arguments are:
+        input array;
+        size of input array;
+        the storage address of the value of average array return;
+        the storage address of the value of maximum value array return;
+        the storage address of the value of minimum value array return;
+        the storage address of the copy array return;
+        the storage address of copy array size return;
+    */
     array_statistics(array_test, (sizeof(array_test) / sizeof(int)), &array_average, &array_maximum, &array_minimum, array_copy, &array_copy_size);
 
+    /*  Print the values to make sure it's correct  */
     printf("\naverage: %d", array_average);
     printf("\nmaximum: %d", array_maximum);
     printf("\nminimum: %d", array_minimum);
