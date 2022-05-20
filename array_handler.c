@@ -1,30 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void array_statistics(int input_array[], int input_array_size, int *average, int *maximum, int *minimum, int array_return[], int *array_copy_size_return);
-
-int main(void)
-{
-    int array_test[] = {10, 20, 30, 80};
-    int array_average = 0;
-    int array_maximum = 0;
-    int array_minimum = 0;
-    int *array_copy = malloc(10 * sizeof(int));
-    int array_copy_size = 0;
-
-    array_statistics(array_test, (sizeof(array_test) / sizeof(int)), &array_average, &array_maximum, &array_minimum, array_copy, &array_copy_size);
-
-    printf("\naverage: %d", array_average);
-    printf("\nmaximum: %d", array_maximum);
-    printf("\nminimum: %d", array_minimum);
-    printf("\narray size: %d", array_copy_size);
-
-    for (int k = 0; k < array_copy_size; k++)
-    {
-        printf("\narray_copy[%d] = %d", k, array_copy[k]);
-    }
-}
-
 void array_statistics(int input_array[], int input_array_size, int *average, int *maximum, int *minimum, int array_return[], int *array_copy_size_return)
 {
     /*  Reset all pointers  */
