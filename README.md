@@ -74,6 +74,7 @@ int main(void)
 
 >- Built with MSYS2 MinGW 64
 >- gcc version 11.3.0
+>- Visual Studio Code editor was used
 
 ## Languages used
 
