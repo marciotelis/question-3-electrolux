@@ -18,10 +18,11 @@
 
 ## Test program
 
-'''
+~~~c
 
 int main(void)
 {
+
     int array_test[] = {10, 20, 30, 80};
     int array_average = 0;
     int array_maximum = 0;
@@ -42,7 +43,7 @@ int main(void)
     }
 }
 
- '''
+~~~
 
 ## Build settings
 
